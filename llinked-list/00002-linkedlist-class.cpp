@@ -25,10 +25,21 @@ private:
     Node *head;
 
 public:
-    LinkedList(){
+    LinkedList()
+    {
         head = NULL;
     }
-    
+
+    void display()
+    {
+        Node *temp = head;
+        while (temp != NULL)
+        {
+            cout << temp->data << ' ';
+            temp = temp->next;
+        }
+        cout << endl;
+    }
 };
 
 int main()
