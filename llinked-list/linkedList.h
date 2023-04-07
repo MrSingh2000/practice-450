@@ -31,10 +31,22 @@ private:
 
 public:
     Node *head;
-    
+
     LinkedList()
     {
         head = NULL;
+    }
+
+    int size()
+    {
+        Node *temp = head;
+        int count = 0;
+        while (temp != NULL)
+        {
+            temp = temp->next;
+            count++;
+        }
+        return count;
     }
 
     void display()
@@ -136,26 +148,3 @@ public:
         free(ptr);
     }
 };
-
-int main()
-{
-    LinkedList ll = LinkedList();
-    ll.display();
-    ll.insertAtLast(88);
-    ll.display();
-    ll.insertAtFirst(20);
-    ll.insertAtFirst(10);
-    ll.insertAtLast(40);
-    ll.display();
-    ll.insertAtIndex(3, 30);
-    ll.display();
-
-    ll.deleteAtFirst();
-    ll.deleteAtLast();
-    ll.deleteAtIndex(2);
-    ll.display();
-    ll.deleteAtFirst();
-    ll.display();
-
-    return 0;
-}
