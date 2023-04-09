@@ -32,3 +32,4 @@ struct Node *deleteCycle(struct Node *head)
 
     return slow;
 }
+// useless comment
